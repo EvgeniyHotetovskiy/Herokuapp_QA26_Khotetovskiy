@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 public class Checkboxes extends PreCondition {
     @Test
     public void checkboxes() {
