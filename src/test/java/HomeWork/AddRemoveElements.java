@@ -14,8 +14,8 @@ public class AddRemoveElements extends PreCondition {
         driver.findElement(By.xpath("//button[text()='Add Element']")).click();
         driver.findElement(By.xpath("//button[text()='Add Element']")).click();
         driver.findElement(By.xpath("//button[text()='Delete']")).click();
-        List<WebElement> Rows = driver.findElements(By.xpath("//button[text()='Delete']"));
-        Assert.assertEquals(Rows.size(), 1);
+        List<WebElement> row = driver.findElements(By.xpath("//button[text()='Delete']"));
+        Assert.assertEquals(row.size(), 1);
     }
 
 }
