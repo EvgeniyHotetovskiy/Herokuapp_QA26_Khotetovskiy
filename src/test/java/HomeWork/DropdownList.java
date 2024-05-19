@@ -11,14 +11,15 @@ public class DropdownList extends PreCondition {
     @Test
     public void dropdownList() {
         driver.navigate().to("https://the-internet.herokuapp.com/dropdown");
-        List<WebElement> Rows = driver.findElements(By.cssSelector("#dropdown > option"));
-        Assert.assertEquals(Rows.size(), 3);
-        Rows.get(1).click();
-        List<WebElement> Rows1 = driver.findElements(By.cssSelector("#dropdown > option"));
-        Assert.assertTrue(Rows1.get(1).isSelected());
-        Rows.get(2).click();
-        List<WebElement> Rows2 = driver.findElements(By.cssSelector("#dropdown > option"));
-        Assert.assertTrue(Rows2.get(2).isSelected());
+        Select select = new Select(driver.findElement(By.id("dropdown")));
+        List<WebElement> elements = select.getOptions();
+        Assert.assertTrue(elements.get(0).isDisplayed(), "Наличие 1го елемента");
+        Assert.assertTrue(elements.get(1).isDisplayed(), "Наличие 2го елемента");
+        Assert.assertTrue(elements.get(2).isDisplayed(), "Наличие 3го елемента");
+        select.selectByIndex(1);
+        Assert.assertEquals("Option 1", select.getFirstSelectedOption().getText(), "Текст второго выбранного элемента");
+        select.selectByIndex(2);
+        Assert.assertEquals("Option 2", select.getFirstSelectedOption().getText(), "Текст третьего выбранного элемента");
     }
 }
 

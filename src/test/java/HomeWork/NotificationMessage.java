@@ -11,7 +11,8 @@ public class NotificationMessage extends PreCondition {
     public void notificationMessage() {
         driver.navigate().to("https://the-internet.herokuapp.com/notification_message_rendered");
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/p/a")).click();
-        WebElement row = (WebElement) driver.findElement(By.cssSelector("div[class='flash notice']"));
-        Assert.assertEquals(row.getText(), " Action successful");
+        Assert.assertTrue(driver.findElement(By.id("flash")).isDisplayed(), "отображение текста");
+        WebElement element = driver.findElement(By.xpath("//div[@id='flash']"));
+        Assert.assertEquals(element.getText().replace("×", "").trim(), "Action successful");
     }
 }
