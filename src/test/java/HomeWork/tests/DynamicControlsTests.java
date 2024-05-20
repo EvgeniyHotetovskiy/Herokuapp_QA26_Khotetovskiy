@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class DynamicControlsTests extends BaseTest {
 
     @Test
-    public void dynamicControlsTest(){
+    public void dynamicControlsTest() {
         dynamicControlsPage.openDynamicControlsPage();
         dynamicControlsPage.clickCheckboxButton();
         wait.until(ExpectedConditions.textToBe(DynamicControlsPage.AFTER_LOADING_CHANGE, "It's gone!"));

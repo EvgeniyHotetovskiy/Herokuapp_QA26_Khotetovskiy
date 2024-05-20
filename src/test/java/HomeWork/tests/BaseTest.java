@@ -25,6 +25,7 @@ public class BaseTest {
         this.fileUploadPage = new FileUploadPage(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
+
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         this.driver.quit();

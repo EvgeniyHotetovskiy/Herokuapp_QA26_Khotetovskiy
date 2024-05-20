@@ -17,13 +17,14 @@ public class DynamicControlsPage extends BasePage {
         super(driver);
     }
 
-    public void openDynamicControlsPage (){
-    driver.get("https://the-internet.herokuapp.com/dynamic_controls");
-}
+    public void openDynamicControlsPage() {
+        driver.get("https://the-internet.herokuapp.com/dynamic_controls");
+    }
 
     public void clickCheckboxButton() {
         driver.findElement(CHECKBOX_BUTTON).click();
     }
+
     public boolean isElementCheckboxPresent(WebDriver driver, By by) {
         try {
             driver.findElement(by);
@@ -32,10 +33,12 @@ public class DynamicControlsPage extends BasePage {
             return false;
         }
     }
+
     public void clickInputButton() {
         driver.findElement(INPUT_BUTTON).click();
     }
-    public boolean isInputDisabled (WebDriver driver, By by) {
+
+    public boolean isInputDisabled(WebDriver driver, By by) {
         return driver.findElement(by).getAttribute("disabled") != null;
     }
 }
