@@ -17,9 +17,9 @@ public class DropdownList extends PreCondition {
         Assert.assertTrue(elements.get(1).isDisplayed(), "Наличие 2го елемента");
         Assert.assertTrue(elements.get(2).isDisplayed(), "Наличие 3го елемента");
         select.selectByIndex(1);
-        Assert.assertEquals("Option 1", select.getFirstSelectedOption().getText(), "Текст второго выбранного элемента");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Option 1", "Текст второго выбранного элемента");
         select.selectByIndex(2);
-        Assert.assertEquals("Option 2", select.getFirstSelectedOption().getText(), "Текст третьего выбранного элемента");
+        Assert.assertEquals( select.getFirstSelectedOption().getText(),"Option 2", "Текст третьего выбранного элемента");
     }
 }
 
