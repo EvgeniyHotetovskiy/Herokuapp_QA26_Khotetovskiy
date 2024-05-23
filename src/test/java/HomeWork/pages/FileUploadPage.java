@@ -17,9 +17,10 @@ public class FileUploadPage extends BasePage {
     public void clickUploadButton () {
         driver.findElement(UPLOAD_BUTTON);
     }
-    public String getNameOfButtonRemoveProduct (String productName) {
-        return this.getProductCardByName(productName).findElement(REMOVE_TO_CART_BUTTON).getText();
-    }
+//    public String getNameOfButtonRemoveProduct (String productName) {
+//        return this.getProductCardByName(productName).findElement(REMOVE_TO_CART_BUTTON).getText();
+//
+//    }
 
 //    System.getProperty("user.dir") + "src/test/resources/Test"
 
