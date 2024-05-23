@@ -28,9 +28,9 @@ public class DynamicControlsPage extends BasePage {
         driver.findElement(CHECKBOX_BUTTON).click();
     }
 
-    public boolean isElementCheckboxPresent(By by) {
+    public boolean isElementCheckboxPresent() {
         try {
-            driver.findElement(by);
+            driver.findElement(CHECK_CHECKBOX);
             return true;
         } catch (NoSuchElementException e) {
             return false;
@@ -41,16 +41,8 @@ public class DynamicControlsPage extends BasePage {
         driver.findElement(INPUT_BUTTON).click();
     }
 
-    public boolean isInputAvailable(By by) {
-        return driver.findElement(by).isEnabled();
-    }
-
-    public By getCHECK_CHECKBOX() {
-        return CHECK_CHECKBOX;
-    }
-
-    public By getINPUT_LOCATOR() {
-        return INPUT_LOCATOR;
+    public boolean isInputAvailable() {
+        return driver.findElement(INPUT_LOCATOR).isEnabled();
     }
 
     public void waitLoadingChangeOnPage(String expectedValue) {

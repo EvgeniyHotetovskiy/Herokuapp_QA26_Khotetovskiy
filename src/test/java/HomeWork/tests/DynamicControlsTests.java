@@ -10,11 +10,11 @@ public class DynamicControlsTests extends BaseTest {
         dynamicControlsPage.openDynamicControlsPage();
         dynamicControlsPage.clickCheckboxButton();
         dynamicControlsPage.waitLoadingChangeOnPage("It's gone!");
-        Assert.assertFalse(dynamicControlsPage.isElementCheckboxPresent(dynamicControlsPage.getCHECK_CHECKBOX()), "Element is present");
-        Assert.assertFalse(dynamicControlsPage.isInputAvailable(dynamicControlsPage.getINPUT_LOCATOR()), "Input  is available");
+        Assert.assertFalse(dynamicControlsPage.isElementCheckboxPresent(), "Element is present");
+        Assert.assertFalse(dynamicControlsPage.isInputAvailable(), "Input  is available");
         dynamicControlsPage.clickInputButton();
         dynamicControlsPage.waitLoadingChangeOnPage("It's enabled!");
-        Assert.assertTrue(dynamicControlsPage.isInputAvailable(dynamicControlsPage.getINPUT_LOCATOR()), "Input still is disabled");
+        Assert.assertTrue(dynamicControlsPage.isInputAvailable(), "Input still is disabled");
     }
 
 }

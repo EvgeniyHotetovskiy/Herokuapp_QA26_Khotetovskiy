@@ -9,7 +9,6 @@ public class FileUploadPage extends BasePage {
     private final static By FILE_UPLOADED_SUCCESS = By.cssSelector("div[class='panel text-center']");
     private final static By FILE_UPLOAD_FIELD = By.cssSelector("input[id=file-upload]");
     private final static By FILE_UPLOADED_PAGE = By.xpath("//*[@id=\"content\"]/div/h3");
-    private static final String PATH_TO_LOADING_FILE = System.getProperty("user.dir") + "/src/test/resources/Test";
 
     public FileUploadPage(WebDriver driver) {
         super(driver);
@@ -27,7 +26,7 @@ public class FileUploadPage extends BasePage {
         return this.driver.findElement(FILE_UPLOADED_SUCCESS).getText();
     }
 
-    public void enterFileUploadField() {
+    public void enterFileUploadField(String PATH_TO_LOADING_FILE) {
         driver.findElement(FILE_UPLOAD_FIELD).sendKeys(PATH_TO_LOADING_FILE);
     }
 
