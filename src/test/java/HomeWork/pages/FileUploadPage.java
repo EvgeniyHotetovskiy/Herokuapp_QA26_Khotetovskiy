@@ -2,6 +2,7 @@ package HomeWork.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class FileUploadPage extends BasePage {
     private final static By UPLOAD_BUTTON = By.cssSelector("input[id=file-submit]");

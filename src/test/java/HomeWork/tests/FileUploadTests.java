@@ -14,5 +14,6 @@ public class FileUploadTests extends BaseTest {
         fileUploadPage.clickUploadButton();
         fileUploadPage.waitFileUploadedSuccessPage();
         Assert.assertEquals(fileUploadPage.getTextFileUploaded(), "Test", "File is not uploaded");
+
     }
 }
